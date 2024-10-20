@@ -1,7 +1,9 @@
 import { useState } from "react";
 import './Country.css'
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountry }) => {
     const [visited, setVisited] = useState(false);
+
+
 
     const handleVisited = () => {
         setVisited(!visited)
@@ -29,6 +31,7 @@ const Country = ({ country }) => {
                     visited && 'Visited Done'
                 }
             </p>
+            <button onClick={() => handleVisitedCountry(country)}>Mark</button>
         </div>
     );
 };
